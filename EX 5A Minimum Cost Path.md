@@ -5,16 +5,14 @@ To write a Python program using A Naive recursive implementation of Minimum Cost
 
 ## Algorithm:
 ```
-1.Base Case:If either row (m) or column (n) is out of bounds (i.e., less than 0), return a very large value (sys.maxsize) to signify an invalid path.
-2.If both m == 0 and n == 0, return the cost of the starting cell cost[m][n].
-3.Recursive Case:For every cell (m, n), calculate the minimum cost by considering three possible moves:
-4.Move from the top-left diagonal (m-1, n-1).
-5.Move from the top (m-1, n).
-6.Move from the left (m, n-1).
-7.For each direction, recursively compute the cost and add the current cell's cost.
-8.Return the Minimum Cost:Recursively return the minimum of the three paths, adding the cost of the current cell.
-9.Final Output:Call the recursive function starting from the bottom-right corner of the matrix to find the minimum cost.
+1. If row `m` or column `n` is less than 0, return a large value to indicate an invalid path.
+2. If `m == 0` and `n == 0`, return the cost of the starting cell.
+3. Recursively compute the cost to reach cell `(m, n)` from the top-left diagonal, top, and left.
+4. Add the current cell’s cost to the minimum of these three computed costs.
+5. Return this minimum cost.
+6. Call the recursive function starting from the bottom-right corner to get the final minimum cost.
 ```
+
 ## Program:
 ```
 Developed by: Prabha C
